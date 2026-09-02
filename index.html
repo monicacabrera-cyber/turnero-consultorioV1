@@ -294,7 +294,7 @@
     Object.keys(body).forEach(k=>{
       const v = body[k];
       url.searchParams.set(k, typeof v === 'object' ? JSON.stringify(v) : v);
-    });
+    }); 
     const data = await jsonp(url.toString());
     if(!data.ok) toast(data.error || 'Error al guardar datos.');
     return data;
